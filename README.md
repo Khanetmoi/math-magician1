@@ -6,8 +6,6 @@ PROJECT DESCRIPTION -->
 
 # 📖 [math-magician]
 
-> Describe your project in 1 or 2 sentences.
-
 **[math-magician]** "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
 
     Make simple calculations.
@@ -83,8 +81,6 @@ npm start
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 👤 **Inayat-khan**
 
