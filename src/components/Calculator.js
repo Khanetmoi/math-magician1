@@ -19,7 +19,7 @@ export const Calculator = ()=>{
     </button>
     <button type="submit">4</button>
     <button type="submit">5</button>
-    <button type="submit">64</button>
+    <button type="submit">6</button>
     <button type="submit" className="operand">
       -
     </button>
