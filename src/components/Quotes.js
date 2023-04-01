@@ -1,48 +1,52 @@
 import React, { useState, useEffect } from 'react';
+import { v4 as id } from 'uuid';
+
+
+const loadingMessage = <p>Waiting for data loading....</p>;
+const errorMessage = <p>Oops, something went wrong!!!</p>;
 
 const Quotes = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [quotes, setQuotes] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-
-    fetch('https://api.api-ninjas.com/v1/quotes?category=funny',
-      {
-        // mode: 'no-cors',
+  const quotesApi = async () => {
+    setIsLoading(true);
+    try {
+      fetch('https://api.api-ninjas.com/v1/quotes?category=happiness', {
         headers: {
-          'X-Api-Key': 'hTAKXNFRMzvu2GX5y3pZ0Jo8X9WRprAcTGQV9DPv',
-          'Content-Type': 'application/json',
+          'X-Api-Key': 'FSvXTjxiPe8a+r73Jt+dLQ==j1LfG5Zfc7QrFBl8',
         },
       })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      })
-      .catch((error) => setError(error.message));
-    setLoading(false);
-  }, [setData, setLoading]);
+        .then((Response) => Response.json())
+        .then((data) => {
+          setQuotes(data);
+        });
+    } catch (error) {
+      setHasError(true);
+    }
+    setIsLoading(false);
+  };
 
-  if (loading) return <h2>Loading... please wait</h2>;
-  if (error) {
-    return (
-      <h3>
-        Ooopps!!
-        {' '}
-        {error}
-      </h3>
-    );
-  }
-
+  useEffect(() => {
+    quotesApi();
+  }, [setQuotes, setIsLoading]);
   return (
-    <div>
-      {data.map((item) => (
-        <ul key={data.indexOf(item)} className="quotes__container">
-          <li>{item.quote}</li>
-          <li className="author">{item.author}</li>
-        </ul>
-      ))}
+    <div className="quotesbox">
+      {isLoading ? loadingMessage : null}
+      {hasError ? errorMessage : null}
+      {quotes && Array.isArray(quotes)
+        && quotes.map((data) => (
+          <div key={id()}>
+            <h2>
+              {data.quote}
+              {' '}
+              -
+              {' '}
+              {data.author}
+            </h2>
+          </div>
+        ))}
     </div>
   );
 };
