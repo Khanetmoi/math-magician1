@@ -13,4 +13,7 @@ describe('testing the operate function', () => {
     test('testing modulo', () => {
         expect(operate(5, 3, '%')).toBe('2');
     });
+    test('testing division', () => {
+        expect(operate(302, 0, '÷')).toBe("Can't divide by 0.");
+    });
 });

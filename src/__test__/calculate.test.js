@@ -42,4 +42,16 @@ describe('Unit tests of calculate.js', () => {
     const calculation = calculate(testObj, '=');
     expect(calculation.total).toEqual('10');
   });
+
+  it('returns an empty object when given the 0 button name and the current next value is also 0', () => {
+    const obj = { total: '100', next: '0', operation: '+' };
+    const result = calculate(obj, '0');
+    expect(result).toEqual({});
+  });
+
+  it('calculates the result of the operation when given the equals button name and there is a current operation and next value', () => {
+    const obj = { total: '100', next: '5', operation: '+' };
+    const result = calculate(obj, '=');
+    expect(result).toEqual({ total: '105', next: null, operation: null });
+  });
 });
