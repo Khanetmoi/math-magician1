@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test of  test if Header is rendered 1`] = `
+<div
+  className="flex"
+>
+  <h2>
+    Math magicians
+  </h2>
+  <nav>
+    <a
+      className="navLink"
+      href="#/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="navLink"
+      href="#/Calculator"
+      onClick={[Function]}
+    >
+      Calculator
+    </a>
+    <a
+      className="navLink"
+      href="#/Quotes"
+      onClick={[Function]}
+    >
+      Quote
+    </a>
+  </nav>
+</div>
+`;
+
+exports[`Test of Header test if Header is rendered 1`] = `
+<div
+  className="flex"
+>
+  <h2>
+    Math magicians
+  </h2>
+  <nav>
+    <a
+      className="navLink"
+      href="#/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="navLink"
+      href="#/Calculator"
+      onClick={[Function]}
+    >
+      Calculator
+    </a>
+    <a
+      className="navLink"
+      href="#/Quotes"
+      onClick={[Function]}
+    >
+      Quote
+    </a>
+  </nav>
+</div>
+`;
+
+exports[`Test of Nav test if Header is rendered 1`] = `
+<div
+  className="flex"
+>
+  <h2>
+    Math magicians
+  </h2>
+  <nav>
+    <a
+      className="navLink"
+      href="#/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="navLink"
+      href="#/Calculator"
+      onClick={[Function]}
+    >
+      Calculator
+    </a>
+    <a
+      className="navLink"
+      href="#/Quotes"
+      onClick={[Function]}
+    >
+      Quote
+    </a>
+  </nav>
+</div>
+`;
